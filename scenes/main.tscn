@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwywekmbi5xir"]
+[gd_scene load_steps=10 format=3 uid="uid://cwywekmbi5xir"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7fqk6"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
@@ -14,6 +14,8 @@ colors = PackedColorArray(0.764709, 0.414671, 0.203465, 1, 0.764706, 0.415686, 0
 gradient = SubResource("Gradient_a7mha")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppl8l"]
+
+[sub_resource type="Theme" id="Theme_6mpjf"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lio0d")
@@ -50,5 +52,20 @@ texture = SubResource("GradientTexture2D_uxnun")
 shape = SubResource("RectangleShape2D_ppl8l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Time until storm: 00:00"
+
+[node name="TimeProgressBar" type="ProgressBar" parent="UI"]
+offset_right = 178.0
+offset_bottom = 27.0
+theme = SubResource("Theme_6mpjf")
+max_value = 5.0
+value = 5.0
+show_percentage = false
 
 [connection signal="timeout" from="StormTimer" to="." method="_on_storm_timer_timeout"]

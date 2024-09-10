@@ -60,7 +60,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Time until storm: 00:00"
 
-[node name="TimeProgressBar" type="ProgressBar" parent="UI"]
+[node name="TimerProgressBar" type="ProgressBar" parent="UI"]
 offset_right = 178.0
 offset_bottom = 27.0
 theme = SubResource("Theme_6mpjf")

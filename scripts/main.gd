@@ -1,11 +1,14 @@
 extends Node2D
+
 var is_storm = false
 var calm_color = Color(1, 1, 1)   # Color del fondo durante la calma
 var storm_color = Color(0.2, 0.2, 0.5)  # Color del fondo durante la tormenta
-var time_until_storm = 60.0  # Tiempo inicial en segundos
+var time_until_storm = 5  # Tiempo inicial en segundos
+var rain_shader = load("res://rain_shader_material.tres")
 
 @onready var timer_label = $UI/TimerLabel
-@onready var progress_bar = $UI/TimeProgressBar
+@onready var progress_bar = $UI/TimerProgressBar
+@onready var background = $Background
 
 func _ready():
 	$StormTimer.start()
@@ -31,6 +34,8 @@ func start_storm():
 	print("¡La tormenta ha comenzado!")
 	var tween = get_tree().create_tween()
 	tween.tween_property($Background, "modulate", storm_color, 3.0)
+	background.set_material(rain_shader)
+	
 
 func update_timer_label():
 	var total_seconds = max(time_until_storm, 0.0)

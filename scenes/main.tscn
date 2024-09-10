@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwywekmbi5xir"]
+[gd_scene load_steps=11 format=3 uid="uid://cwywekmbi5xir"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7fqk6"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
 [ext_resource type="Texture2D" uid="uid://bwxs4yjmomhkb" path="res://assets/backgrounds/placeholder_background.png" id="2_qk52e"]
 [ext_resource type="Texture2D" uid="uid://drvcqxsgkjkda" path="res://icon.svg" id="2_torvs"]
+[ext_resource type="Material" uid="uid://bcs5r7mji6xcs" path="res://shaders/flash_material.tres" id="5_vio3r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo2ns"]
 
@@ -67,5 +68,17 @@ theme = SubResource("Theme_6mpjf")
 max_value = 5.0
 value = 5.0
 show_percentage = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = ExtResource("5_vio3r")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.84, 16.28)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = ExtResource("5_vio3r")
 
 [connection signal="timeout" from="StormTimer" to="." method="_on_storm_timer_timeout"]

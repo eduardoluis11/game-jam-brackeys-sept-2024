@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://6i0wsqvt4t6g"]
+
+[ext_resource type="Shader" path="res://rain_and_snow_shader.gdshader" id="1_vjlg0"]
+
+[resource]
+shader = ExtResource("1_vjlg0")
+shader_parameter/rain_amount = 200.0
+shader_parameter/near_rain_length = 0.2
+shader_parameter/far_rain_length = 0.1
+shader_parameter/near_rain_width = 1.0
+shader_parameter/far_rain_width = 0.5
+shader_parameter/near_rain_transparency = 1.0
+shader_parameter/far_rain_transparency = 0.5
+shader_parameter/rain_color = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/base_rain_speed = 0.5
+shader_parameter/additional_rain_speed = 0.5
+shader_parameter/slant = 0.2

@@ -11,4 +11,4 @@ We used ChatGPT, and Bing's AI in the creation of some of the assets for this pr
 
 2)  Muniz, E. (2017, February 7). Free Pixel Art Platformer painted style. Retrieved from https://edermunizz.itch.io/free-pixel-art-plataformer-painted-style 
 
-
+3) Steampunkdemon. (2023, July 9). Rain and Snow Shader with Parallax Effect for Godot. Retrieved from https://steampunkdemon.itch.io/rain-and-snow-shader-with-parallax-effect-for-godot

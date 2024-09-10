@@ -1,5 +1,5 @@
 # game-jam-brackeys-sept-2024
-This is the submission of Eduardo Salinas (eduardorpg64) and Carlos from Brackey's September 2024 Game Jam. It's a game made in Godot. The theme for the Jam is "Calm before the Storm." 
+This is the submission of Eduardo Salinas (eduardorpg64) and Carlos Gaze from Brackey's September 2024 Game Jam. It's a game made in Godot. The theme for the Jam is "Calm before the Storm." 
 
 ### Disclaimer: Use of LLM AIs
 

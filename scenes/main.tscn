@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwywekmbi5xir"]
+[gd_scene load_steps=9 format=3 uid="uid://cwywekmbi5xir"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7fqk6"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
-[ext_resource type="Material" uid="uid://6i0wsqvt4t6g" path="res://rain_shader_material.tres" id="2_i5e3p"]
 [ext_resource type="Texture2D" uid="uid://bwxs4yjmomhkb" path="res://assets/backgrounds/placeholder_background.png" id="2_qk52e"]
 [ext_resource type="Texture2D" uid="uid://drvcqxsgkjkda" path="res://icon.svg" id="2_torvs"]
 
@@ -20,7 +19,6 @@ gradient = SubResource("Gradient_a7mha")
 script = ExtResource("1_lio0d")
 
 [node name="Background" type="Sprite2D" parent="."]
-material = ExtResource("2_i5e3p")
 texture = ExtResource("2_qk52e")
 
 [node name="Player" type="CharacterBody2D" parent="."]

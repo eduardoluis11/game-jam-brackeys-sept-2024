@@ -46,7 +46,7 @@ texture = ExtResource("2_torvs")
 shape = SubResource("RectangleShape2D_lo2ns")
 
 [node name="StormTimer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 5.0
 one_shot = true
 autostart = true
 script = ExtResource("5_evyor")

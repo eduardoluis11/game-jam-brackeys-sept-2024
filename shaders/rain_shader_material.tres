@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bpmea8gp2wukx"]
 
-[ext_resource type="Shader" path="res://rain_and_snow_shader.gdshader" id="1_vjlg0"]
+[ext_resource type="Shader" path="res://shaders/rain_and_snow_shader.gdshader" id="1_vjlg0"]
 
 [resource]
 shader = ExtResource("1_vjlg0")

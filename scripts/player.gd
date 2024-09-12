@@ -41,7 +41,6 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("accept") and is_on_floor():
 
-
 		# These lines will play a jumping sound effect
 		var jump_sound = preload("res://assets/sound-effects/Retro Jump Classic 08.wav")
 		var audio_player = AudioStreamPlayer.new()

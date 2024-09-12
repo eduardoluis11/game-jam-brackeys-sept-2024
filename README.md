@@ -3,7 +3,7 @@ This is the submission of Eduardo Salinas (eduardorpg64) and Carlos Gaze from Br
 
 ### Disclaimer: Use of LLM AIs
 
-We used ChatGPT, and Bing's AI in the creation of some of the assets for this project.
+We used ChatGPT, Github's Copilot, and Bing's AI in the creation of some of the assets for this project.
 
 ### References
 

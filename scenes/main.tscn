@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
 [ext_resource type="Texture2D" uid="uid://bwxs4yjmomhkb" path="res://assets/backgrounds/placeholder_background.png" id="2_qk52e"]
-[ext_resource type="PackedScene" uid="uid://duhr72oqjnlmu" path="res://scenes/player.tscn" id="3_rfuot"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="3_rfuot"]
 [ext_resource type="Script" path="res://scripts/storm_timer.gd" id="5_evyor"]
 [ext_resource type="Material" uid="uid://bcs5r7mji6xcs" path="res://shaders/flash_material.tres" id="5_vio3r"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="6_l7rew"]
@@ -34,7 +34,7 @@ texture = ExtResource("2_qk52e")
 [node name="Player" parent="." instance=ExtResource("3_rfuot")]
 
 [node name="StormTimer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 3.0
 one_shot = true
 autostart = true
 script = ExtResource("5_evyor")
@@ -68,10 +68,10 @@ max_value = 5.0
 value = 5.0
 show_percentage = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Flash" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="Flash"]
 material = ExtResource("5_vio3r")
 offset_right = 40.0
 offset_bottom = 40.0

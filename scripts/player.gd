@@ -25,10 +25,8 @@ Explanation:
 
 You can use the AudioStreamPlayer node to play the sound effect. Here's how you can modify the selected snippet to include playing the jump sound.
 
-Add an AudioStreamPlayer node to your scene and load the sound effect.
-Reference the AudioStreamPlayer node in your script and play the sound when the player jumps.
-
-This way, every time the player jumps, the sound effect will play.
+Add an AudioStreamPlayer node to your scene and load the sound effect. Reference the AudioStreamPlayer node in your script and play the sound when 
+the player jumps. This way, every time the player jumps, the sound effect will play.
 
 I want to first play the jumping sound effect, and then make the player jump, so that the sound effect plays first, and then you 
 see the player jump.

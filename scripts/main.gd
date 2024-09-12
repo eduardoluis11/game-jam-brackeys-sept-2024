@@ -4,7 +4,7 @@ var is_storm = false
 var calm_color = Color(1, 1, 1)   # Color del fondo durante la calma
 var storm_color = Color(0.2, 0.2, 0.5)  # Color del fondo durante la tormenta
 var time_until_storm  # Tiempo inicial en segundos
-var rain_shader = load("res://rain_shader_material.tres")
+var rain_shader = load("res://shaders/rain_shader_material.tres")
 var flash_duration = 0.1
 var flash_intensity = 1.5
 var flash_interval = 8.0 # Intervalo entre relámpagos

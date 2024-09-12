@@ -16,4 +16,5 @@ data_*/
 mono_crash.*.json
 
 # This will add the txt files with the Copilot and ChatGPT chats
-copilot-vs-code.txt 
+copilot-vs-code.txt
+pycharm-copilot-chat.txt

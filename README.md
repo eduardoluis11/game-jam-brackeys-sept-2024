@@ -16,3 +16,5 @@ We used ChatGPT, Github's Copilot, and Bing's AI in the creation of some of the 
 4) sanctumpixel. (2020, July 13). Lightning Lines Pixel Art Effect. Retrieved from https://sanctumpixel.itch.io/lightning-lines-pixel-art-effect
 
 5) Kronbits. (2019, September 23). 200 Free SFX. Retrieved from https://kronbits.itch.io/freesfx
+
+6) Coffee ‘Valen’ Bat. (2022, October 29). SweetSounds SFX. Retrieved from https://coffeevalenbat.itch.io/sweet-sounds-sfx-pack . Sound Effects by Coffee 'Valen' Bat. 

@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://6i0wsqvt4t6g"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bpmea8gp2wukx"]
 
 [ext_resource type="Shader" path="res://rain_and_snow_shader.gdshader" id="1_vjlg0"]
 

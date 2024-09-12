@@ -1,9 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwywekmbi5xir"]
+[gd_scene load_steps=16 format=3 uid="uid://cwywekmbi5xir"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7fqk6"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
 [ext_resource type="Texture2D" uid="uid://bwxs4yjmomhkb" path="res://assets/backgrounds/placeholder_background.png" id="2_qk52e"]
 [ext_resource type="Texture2D" uid="uid://drvcqxsgkjkda" path="res://icon.svg" id="2_torvs"]
+[ext_resource type="Script" path="res://scripts/storm_timer.gd" id="5_evyor"]
+[ext_resource type="Material" uid="uid://bcs5r7mji6xcs" path="res://shaders/flash_material.tres" id="5_vio3r"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="6_l7rew"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo2ns"]
 
@@ -17,13 +20,21 @@ gradient = SubResource("Gradient_a7mha")
 
 [sub_resource type="Theme" id="Theme_6mpjf"]
 
+[sub_resource type="Gradient" id="Gradient_ov470"]
+colors = PackedColorArray(0.917647, 0.917647, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_puflx"]
+gradient = SubResource("Gradient_ov470")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d53id"]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lio0d")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_qk52e")
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("1_7fqk6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -35,9 +46,10 @@ texture = ExtResource("2_torvs")
 shape = SubResource("RectangleShape2D_lo2ns")
 
 [node name="StormTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 60.0
 one_shot = true
 autostart = true
+script = ExtResource("5_evyor")
 
 [node name="Platforms" type="StaticBody2D" parent="."]
 position = Vector2(0, 140)
@@ -60,7 +72,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Time until storm: 00:00"
 
-[node name="TimeProgressBar" type="ProgressBar" parent="UI"]
+[node name="TimerProgressBar" type="ProgressBar" parent="UI"]
 offset_right = 178.0
 offset_bottom = 27.0
 theme = SubResource("Theme_6mpjf")
@@ -68,4 +80,30 @@ max_value = 5.0
 value = 5.0
 show_percentage = false
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = ExtResource("5_vio3r")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.84, 16.28)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = ExtResource("5_vio3r")
+
+[node name="Item" type="Area2D" parent="."]
+position = Vector2(139, 55)
+script = ExtResource("6_l7rew")
+
+[node name="Sprite2D" type="Sprite2D" parent="Item"]
+position = Vector2(-9.53674e-07, 9.53674e-07)
+scale = Vector2(0.3125, 0.3125)
+texture = SubResource("GradientTexture2D_puflx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+shape = SubResource("RectangleShape2D_d53id")
+
 [connection signal="timeout" from="StormTimer" to="." method="_on_storm_timer_timeout"]
+[connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]

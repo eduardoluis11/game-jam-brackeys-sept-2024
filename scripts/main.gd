@@ -6,7 +6,7 @@ var storm_color = Color(0.2, 0.2, 0.5)  # Color del fondo durante la tormenta
 var time_until_storm  # Tiempo inicial en segundos
 var rain_shader = load("res://rain_shader_material.tres")
 var flash_duration = 0.1
-var flash_intensity = 1.0
+var flash_intensity = 1.5
 var flash_interval = 8.0 # Intervalo entre relámpagos
 var time_since_flash = 0.0
 var time_since_last_flash = 0.0
@@ -14,10 +14,11 @@ var time_since_last_flash = 0.0
 @onready var timer_label = $UI/TimerLabel
 @onready var progress_bar = $UI/TimerProgressBar
 @onready var background = $Background
-@onready var color_rect = $CanvasLayer/ColorRect
+@onready var color_rect = $Flash/ColorRect
 @onready var storm_timer = $StormTimer
 
 func _ready():
+	$Flash.set_visible(true)
 	color_rect.material.set_shader_parameter("flash_duration", flash_duration)
 	color_rect.material.set_shader_parameter("flash_intensity", flash_intensity)
 	color_rect.visible = false

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chial02t8eoq0"
-path="res://.godot/imported/Player Beige Tunic Sheet.png-dd52f0be47a6345dbb04eca2534e7208.ctex"
+path="res://.godot/imported/Player Beige Tunic Sheet.png-5c20b1eddd960726f50189c67ad0ecb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Player/Player Beige Tunic Sheet.png"
-dest_files=["res://.godot/imported/Player Beige Tunic Sheet.png-dd52f0be47a6345dbb04eca2534e7208.ctex"]
+source_file="res://assets/sprites/Player Beige Tunic Sheet.png"
+dest_files=["res://.godot/imported/Player Beige Tunic Sheet.png-5c20b1eddd960726f50189c67ad0ecb1.ctex"]
 
 [params]
 

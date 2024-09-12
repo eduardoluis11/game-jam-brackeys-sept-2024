@@ -1,14 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwywekmbi5xir"]
+[gd_scene load_steps=14 format=3 uid="uid://cwywekmbi5xir"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_7fqk6"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
 [ext_resource type="Texture2D" uid="uid://bwxs4yjmomhkb" path="res://assets/backgrounds/placeholder_background.png" id="2_qk52e"]
-[ext_resource type="Texture2D" uid="uid://drvcqxsgkjkda" path="res://icon.svg" id="2_torvs"]
+[ext_resource type="PackedScene" uid="uid://duhr72oqjnlmu" path="res://scenes/player.tscn" id="3_rfuot"]
 [ext_resource type="Script" path="res://scripts/storm_timer.gd" id="5_evyor"]
 [ext_resource type="Material" uid="uid://bcs5r7mji6xcs" path="res://shaders/flash_material.tres" id="5_vio3r"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="6_l7rew"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo2ns"]
 
 [sub_resource type="Gradient" id="Gradient_a7mha"]
 colors = PackedColorArray(0.764709, 0.414671, 0.203465, 1, 0.764706, 0.415686, 0.203922, 1)
@@ -34,16 +31,7 @@ script = ExtResource("1_lio0d")
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_qk52e")
 
-[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
-script = ExtResource("1_7fqk6")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(-1.90735e-06, 1.90735e-06)
-scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("2_torvs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_lo2ns")
+[node name="Player" parent="." instance=ExtResource("3_rfuot")]
 
 [node name="StormTimer" type="Timer" parent="."]
 wait_time = 60.0

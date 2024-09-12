@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://duhr72oqjnlmu"]
+[gd_scene load_steps=9 format=3 uid="uid://bka8ugklc8xaj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_5wpp5"]
 [ext_resource type="Texture2D" uid="uid://chial02t8eoq0" path="res://assets/Player/Player Beige Tunic Sheet.png" id="3_msppy"]

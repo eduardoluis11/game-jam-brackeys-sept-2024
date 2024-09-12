@@ -23,3 +23,10 @@ func _physics_process(delta):
 	# Cambiar de dirección al llegar al límite
 	if abs(position.x - start_position.x) >= move_distance:
 		direction *= -1
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		# Aquí puedes hacer que el jugador reciba daño o pierda una vida
+		print("El jugador ha sido golpeado")
+		get_parent().get_node("StormTimer").advance_storm(2)

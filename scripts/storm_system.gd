@@ -2,6 +2,8 @@ extends Node
 
 signal storm_started
 
+@export var storm_original_wait_time = 10
+
 var is_storm = false
 var time_until_storm  # Tiempo inicial en segundos
 var flash_duration = 0.1
@@ -21,6 +23,7 @@ func _ready() -> void:
 	color_rect.material.set_shader_parameter("flash_duration", flash_duration)
 	color_rect.material.set_shader_parameter("flash_intensity", flash_intensity)
 	color_rect.visible = false
+	storm_timer.set_wait_time(storm_original_wait_time)
 	storm_timer.start()
 	update_timer_label()
 	progress_bar.max_value = storm_timer.get_wait_time()
@@ -64,9 +67,10 @@ func set_is_istorm(value):
 
 func delay_storm():
 	print('dalay_storm')
+	var wait_time = storm_timer.get_wait_time()
 	#Retrasa el temporizador
 	storm_timer.stop()
-	storm_timer.start()
+	storm_timer.start(storm_original_wait_time)
 	
 	
 func advance_storm(time):

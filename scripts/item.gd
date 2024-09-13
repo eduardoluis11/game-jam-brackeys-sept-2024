@@ -2,9 +2,6 @@ extends Area2D
 
 signal item_collected
 
-@onready var storm_timer = get_parent().get_node("StormTimer")
-# Cuánto tiempo retrasa la tormenta (en segundos)
-@export var delay_time = 5.0
 
 """ This script should handle when the Player touches the Timer Power-Up, so that the storm is delayed, so that it takes
 longer for the storm to occur.
@@ -41,8 +38,3 @@ func _on_body_entered(body):
 		# I need to add "get_tree().root" to play this sound effect
 		get_tree().root.add_child(audio_player)
 		audio_player.play()	# End of the lines that will play a sound effect when you get the Power Up
-		
-	
-func delay_storm(time):
-	# Llama al sistema de tormenta para retrasar el temporizador
-	storm_timer.delay_storm(time)

@@ -10,10 +10,10 @@ var flash_interval = 8.0 # Intervalo entre relámpagos
 var time_since_flash = 0.0
 var time_since_last_flash = 0.0
 
-@onready var timer_label = $UI/TimerLabel
-@onready var progress_bar = $UI/TimerProgressBar
+@onready var timer_label = $StormCanvas/TimerLabel
+@onready var progress_bar = $StormCanvas/TimerProgressBar
 @onready var storm_timer = $StormTimer
-@onready var color_rect = $Flash/ColorRect
+@onready var color_rect = $StormCanvas/ColorRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

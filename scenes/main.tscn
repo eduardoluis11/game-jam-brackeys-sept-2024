@@ -43,29 +43,30 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
-[node name="UI" type="CanvasLayer" parent="StormSystem"]
+[node name="Flash" type="CanvasLayer" parent="StormSystem"]
+visible = false
 
-[node name="TimerLabel" type="Label" parent="StormSystem/UI"]
+[node name="StormCanvas" type="CanvasLayer" parent="StormSystem"]
+
+[node name="ColorRect" type="ColorRect" parent="StormSystem/StormCanvas"]
+visible = false
+material = ExtResource("5_vio3r")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.84, 16.28)
+
+[node name="TimerLabel" type="Label" parent="StormSystem/StormCanvas"]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Time until storm: 00:00"
 
-[node name="TimerProgressBar" type="ProgressBar" parent="StormSystem/UI"]
+[node name="TimerProgressBar" type="ProgressBar" parent="StormSystem/StormCanvas"]
 offset_right = 178.0
 offset_bottom = 27.0
 theme = SubResource("Theme_6mpjf")
 max_value = 5.0
 value = 5.0
 show_percentage = false
-
-[node name="Flash" type="CanvasLayer" parent="StormSystem"]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="StormSystem/Flash"]
-material = ExtResource("5_vio3r")
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(28.84, 16.28)
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_qk52e")

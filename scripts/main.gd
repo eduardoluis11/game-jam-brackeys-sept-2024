@@ -9,7 +9,7 @@ var rain_shader = load("res://shaders/rain_shader_material.tres")
 @onready var storm_system = $StormSystem
 
 func _ready():
-	$Background.modulate = calm_color
+	background.modulate = calm_color
 
 func _on_storm_system_storm_started() -> void:
 	print("¡La tormenta ha comenzado!")

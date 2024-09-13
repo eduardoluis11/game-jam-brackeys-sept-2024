@@ -67,7 +67,6 @@ func set_is_istorm(value):
 
 func delay_storm():
 	print('dalay_storm')
-	var wait_time = storm_timer.get_wait_time()
 	#Retrasa el temporizador
 	storm_timer.stop()
 	storm_timer.start(storm_original_wait_time)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwywekmbi5xir"]
+[gd_scene load_steps=19 format=3 uid="uid://cwywekmbi5xir"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
 [ext_resource type="Script" path="res://scripts/storm_system.gd" id="2_gf5pu"]
@@ -25,6 +25,11 @@ gradient = SubResource("Gradient_ov470")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdq1q"]
 size = Vector2(22, 22)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vjdmv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6na1"]
+size = Vector2(38, 38)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lio0d")
@@ -107,6 +112,19 @@ shape = SubResource("RectangleShape2D_j3i0x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
 shape = SubResource("RectangleShape2D_rdq1q")
+
+[node name="Rock" type="RigidBody2D" parent="." groups=["rocks"]]
+position = Vector2(104, 111)
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_vjdmv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rock"]
+position = Vector2(-1.90735e-06, 1.90735e-06)
+scale = Vector2(0.296466, 0.296466)
+texture = ExtResource("2_torvs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock"]
+shape = SubResource("RectangleShape2D_f6na1")
 
 [connection signal="storm_started" from="StormSystem" to="." method="_on_storm_system_storm_started"]
 [connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]

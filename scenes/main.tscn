@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cwywekmbi5xir"]
+[gd_scene load_steps=16 format=3 uid="uid://cwywekmbi5xir"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
 [ext_resource type="Script" path="res://scripts/storm_system.gd" id="2_gf5pu"]
@@ -6,18 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://drvcqxsgkjkda" path="res://icon.svg" id="2_torvs"]
 [ext_resource type="PackedScene" uid="uid://bka8ugklc8xaj" path="res://scenes/player.tscn" id="3_rfuot"]
 [ext_resource type="Material" uid="uid://bcs5r7mji6xcs" path="res://shaders/flash_material.tres" id="5_vio3r"]
+[ext_resource type="PackedScene" uid="uid://beo2ahgkdbss0" path="res://scenes/platform.tscn" id="6_2n1fv"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="6_l7rew"]
 [ext_resource type="Script" path="res://scenes/enemy.gd" id="7_3k674"]
 
 [sub_resource type="Theme" id="Theme_6mpjf"]
-
-[sub_resource type="Gradient" id="Gradient_a7mha"]
-colors = PackedColorArray(0.764709, 0.414671, 0.203465, 1, 0.764706, 0.415686, 0.203922, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_uxnun"]
-gradient = SubResource("Gradient_a7mha")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppl8l"]
 
 [sub_resource type="Gradient" id="Gradient_ov470"]
 colors = PackedColorArray(0.917647, 0.917647, 0, 1, 1, 1, 0, 1)
@@ -70,17 +63,8 @@ texture = ExtResource("2_qk52e")
 
 [node name="Player" parent="." instance=ExtResource("3_rfuot")]
 
-[node name="Platforms" type="StaticBody2D" parent="."]
+[node name="Platform" parent="." instance=ExtResource("6_2n1fv")]
 position = Vector2(0, 140)
-scale = Vector2(20.6, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Platforms"]
-position = Vector2(-9.53674e-07, 9.53674e-07)
-scale = Vector2(0.3125, 0.3125)
-texture = SubResource("GradientTexture2D_uxnun")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms"]
-shape = SubResource("RectangleShape2D_ppl8l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

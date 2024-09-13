@@ -30,7 +30,6 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 
 		# Llama a la función que retrasa la tormenta
-		#storm_timer.delay_storm(delay_time)
 		item_collected.emit()
 		queue_free()  # Elimina el ítem después de recogerlo
 
@@ -42,9 +41,6 @@ func _on_body_entered(body):
 		# I need to add "get_tree().root" to play this sound effect
 		get_tree().root.add_child(audio_player)
 		audio_player.play()	# End of the lines that will play a sound effect when you get the Power Up
-
-		#		# Print a debugging message when you touch the power up
-		#		print("Power Up collected by player")
 		
 	
 func delay_storm(time):

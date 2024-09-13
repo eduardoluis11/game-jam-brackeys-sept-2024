@@ -5,7 +5,6 @@ var storm_color = Color(0.2, 0.2, 0.5)  # Color del fondo durante la tormenta
 var rain_shader = load("res://shaders/rain_shader_material.tres")
 
 @onready var background = $Background
-@onready var color_rect = $Flash/ColorRect
 @onready var storm_system = $StormSystem
 
 func _ready():

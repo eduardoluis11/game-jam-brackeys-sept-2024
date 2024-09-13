@@ -62,12 +62,12 @@ show_percentage = false
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_qk52e")
 
-[node name="Node" type="Node" parent="."]
+[node name="Environment" type="Node" parent="."]
 
-[node name="Platform" parent="Node" instance=ExtResource("6_2n1fv")]
+[node name="Platform" parent="Environment" instance=ExtResource("6_2n1fv")]
 position = Vector2(0, 140)
 
-[node name="Wall" parent="Node" instance=ExtResource("10_jhbrx")]
+[node name="Wall" parent="Environment" instance=ExtResource("10_jhbrx")]
 position = Vector2(-206, 0)
 rotation = 1.57079
 

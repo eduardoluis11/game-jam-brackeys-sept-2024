@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwywekmbi5xir"]
+[gd_scene load_steps=17 format=3 uid="uid://cwywekmbi5xir"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
 [ext_resource type="Script" path="res://scripts/storm_system.gd" id="2_gf5pu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://beo2ahgkdbss0" path="res://scenes/platform.tscn" id="6_2n1fv"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="6_l7rew"]
 [ext_resource type="Script" path="res://scenes/enemy.gd" id="7_3k674"]
+[ext_resource type="PackedScene" uid="uid://33w3hl172lv4" path="res://scenes/wall.tscn" id="10_jhbrx"]
 
 [sub_resource type="Theme" id="Theme_6mpjf"]
 
@@ -61,10 +62,16 @@ show_percentage = false
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_qk52e")
 
-[node name="Player" parent="." instance=ExtResource("3_rfuot")]
+[node name="Node" type="Node" parent="."]
 
-[node name="Platform" parent="." instance=ExtResource("6_2n1fv")]
+[node name="Platform" parent="Node" instance=ExtResource("6_2n1fv")]
 position = Vector2(0, 140)
+
+[node name="Wall" parent="Node" instance=ExtResource("10_jhbrx")]
+position = Vector2(-206, 0)
+rotation = 1.57079
+
+[node name="Player" parent="." instance=ExtResource("3_rfuot")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

@@ -24,6 +24,14 @@ func _physics_process(delta):
 	# Cambiar de dirección al llegar al límite
 	if abs(position.x - start_position.x) >= move_distance:
 		direction *= -1
+		
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		# Si colisiona con una pared (podría ser un StaticBody2D o una etiqueta como "Wall")
+		if collision.get_collider().is_in_group("walls"): 
+			print("Colisión con muro")
+			# Cambia la dirección al lado opuesto (inversión de la dirección x)
+			direction *= -1
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -1,5 +1,7 @@
 extends Area2D
 
+signal item_collected
+
 @onready var storm_timer = get_parent().get_node("StormTimer")
 # Cuánto tiempo retrasa la tormenta (en segundos)
 @export var delay_time = 5.0
@@ -28,10 +30,11 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 
 		# Llama a la función que retrasa la tormenta
-		storm_timer.delay_storm(delay_time)
+		#storm_timer.delay_storm(delay_time)
+		item_collected.emit()
 		queue_free()  # Elimina el ítem después de recogerlo
 
-        # These lines will play a Power Up sound effect
+		# These lines will play a Power Up sound effect
 		var jump_sound = preload("res://assets/sound-effects/Powerup.wav")
 		var audio_player = AudioStreamPlayer.new()
 		audio_player.stream = jump_sound

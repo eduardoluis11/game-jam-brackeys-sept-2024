@@ -1,13 +1,15 @@
 [gd_scene load_steps=18 format=3 uid="uid://cwywekmbi5xir"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
+[ext_resource type="Script" path="res://scripts/storm_system.gd" id="2_gf5pu"]
 [ext_resource type="Texture2D" uid="uid://bwxs4yjmomhkb" path="res://assets/backgrounds/placeholder_background.png" id="2_qk52e"]
 [ext_resource type="Texture2D" uid="uid://drvcqxsgkjkda" path="res://icon.svg" id="2_torvs"]
 [ext_resource type="PackedScene" uid="uid://bka8ugklc8xaj" path="res://scenes/player.tscn" id="3_rfuot"]
-[ext_resource type="Script" path="res://scripts/storm_timer.gd" id="5_evyor"]
 [ext_resource type="Material" uid="uid://bcs5r7mji6xcs" path="res://shaders/flash_material.tres" id="5_vio3r"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="6_l7rew"]
 [ext_resource type="Script" path="res://scenes/enemy.gd" id="7_3k674"]
+
+[sub_resource type="Theme" id="Theme_6mpjf"]
 
 [sub_resource type="Gradient" id="Gradient_a7mha"]
 colors = PackedColorArray(0.764709, 0.414671, 0.203465, 1, 0.764706, 0.415686, 0.203922, 1)
@@ -16,8 +18,6 @@ colors = PackedColorArray(0.764709, 0.414671, 0.203465, 1, 0.764706, 0.415686, 0
 gradient = SubResource("Gradient_a7mha")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppl8l"]
-
-[sub_resource type="Theme" id="Theme_6mpjf"]
 
 [sub_resource type="Gradient" id="Gradient_ov470"]
 colors = PackedColorArray(0.917647, 0.917647, 0, 1, 1, 1, 0, 1)
@@ -35,16 +35,42 @@ size = Vector2(22, 22)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lio0d")
 
+[node name="StormSystem" type="Node" parent="."]
+script = ExtResource("2_gf5pu")
+
+[node name="StormTimer" type="Timer" parent="StormSystem"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="UI" type="CanvasLayer" parent="StormSystem"]
+
+[node name="TimerLabel" type="Label" parent="StormSystem/UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Time until storm: 00:00"
+
+[node name="TimerProgressBar" type="ProgressBar" parent="StormSystem/UI"]
+offset_right = 178.0
+offset_bottom = 27.0
+theme = SubResource("Theme_6mpjf")
+max_value = 5.0
+value = 5.0
+show_percentage = false
+
+[node name="Flash" type="CanvasLayer" parent="StormSystem"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="StormSystem/Flash"]
+material = ExtResource("5_vio3r")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.84, 16.28)
+
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_qk52e")
 
 [node name="Player" parent="." instance=ExtResource("3_rfuot")]
-
-[node name="StormTimer" type="Timer" parent="."]
-wait_time = 10.0
-one_shot = true
-autostart = true
-script = ExtResource("5_evyor")
 
 [node name="Platforms" type="StaticBody2D" parent="."]
 position = Vector2(0, 140)
@@ -59,30 +85,6 @@ texture = SubResource("GradientTexture2D_uxnun")
 shape = SubResource("RectangleShape2D_ppl8l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="TimerLabel" type="Label" parent="UI"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Time until storm: 00:00"
-
-[node name="TimerProgressBar" type="ProgressBar" parent="UI"]
-offset_right = 178.0
-offset_bottom = 27.0
-theme = SubResource("Theme_6mpjf")
-max_value = 5.0
-value = 5.0
-show_percentage = false
-
-[node name="Flash" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="Flash"]
-material = ExtResource("5_vio3r")
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(28.84, 16.28)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -117,6 +119,8 @@ shape = SubResource("RectangleShape2D_j3i0x")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
 shape = SubResource("RectangleShape2D_rdq1q")
 
-[connection signal="timeout" from="StormTimer" to="." method="_on_storm_timer_timeout"]
+[connection signal="storm_started" from="StormSystem" to="." method="_on_storm_system_storm_started"]
 [connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]
+[connection signal="item_collected" from="Item" to="." method="_on_item_item_collected"]
+[connection signal="palyer_hited" from="Enemy" to="." method="_on_enemy_palyer_hited"]
 [connection signal="body_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_body_entered"]

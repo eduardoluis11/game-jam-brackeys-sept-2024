@@ -17,11 +17,11 @@ var time_since_last_flash = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Flash.set_visible(true)
+	color_rect.set_visible(true)
 	color_rect.material.set_shader_parameter("flash_duration", flash_duration)
 	color_rect.material.set_shader_parameter("flash_intensity", flash_intensity)
 	color_rect.visible = false
-	$StormTimer.start()
+	storm_timer.start()
 	update_timer_label()
 	progress_bar.max_value = storm_timer.get_wait_time()
 	progress_bar.value = storm_timer.get_wait_time()
@@ -65,7 +65,6 @@ func set_is_istorm(value):
 func delay_storm():
 	print('dalay_storm')
 	#Retrasa el temporizador
-	#time_until_storm += time
 	storm_timer.stop()
 	storm_timer.start()
 	

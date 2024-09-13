@@ -43,9 +43,6 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
-[node name="Flash" type="CanvasLayer" parent="StormSystem"]
-visible = false
-
 [node name="StormCanvas" type="CanvasLayer" parent="StormSystem"]
 
 [node name="ColorRect" type="ColorRect" parent="StormSystem/StormCanvas"]

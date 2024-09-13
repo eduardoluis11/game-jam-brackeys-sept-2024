@@ -14,7 +14,7 @@ func _ready():
 func _on_storm_system_storm_started() -> void:
 	print("¡La tormenta ha comenzado!")
 	var tween = get_tree().create_tween()
-	tween.tween_property($Background, "modulate", storm_color, 3.0)
+	tween.tween_property(background, "modulate", storm_color, 3.0)
 	background.set_material(rain_shader)
 
 

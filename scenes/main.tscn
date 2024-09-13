@@ -32,7 +32,7 @@ gradient = SubResource("Gradient_ov470")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdq1q"]
 size = Vector2(22, 22)
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 script = ExtResource("1_lio0d")
 
 [node name="StormSystem" type="Node" parent="."]

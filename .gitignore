@@ -18,3 +18,9 @@ mono_crash.*.json
 # This will add the txt files with the Copilot and ChatGPT chats
 copilot-vs-code.txt
 pycharm-copilot-chat.txt
+/.idea/dbnavigator.xml
+/.idea/misc.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
+/.idea/workspace.xml

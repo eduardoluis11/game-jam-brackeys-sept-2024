@@ -73,4 +73,5 @@ func delay_storm():
 func advance_storm(time):
 	var time_left = storm_timer.get_time_left()
 	storm_timer.stop()
-	storm_timer.start(time_left-time)
+	if time_left > time:
+		storm_timer.start(time_left-time)

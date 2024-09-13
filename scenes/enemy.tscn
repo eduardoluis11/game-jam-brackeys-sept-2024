@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bv0teh6avb60j" path="res://assets/sprites/Enemies/skeleton_idle.png" id="3_2caa2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3i0x"]
-size = Vector2(9, 16)
+size = Vector2(12.2881, 19.017)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdq1q"]
-size = Vector2(9, 15)
+size = Vector2(13.983, 20.7627)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_040vc"]
 atlas = ExtResource("3_2caa2")
@@ -65,13 +65,13 @@ scale = Vector2(2.36, 2.36)
 script = ExtResource("1_nsbd5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(-0.635593, -1.50848)
 shape = SubResource("RectangleShape2D_j3i0x")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 0.5)
+position = Vector2(-0.635586, -1.48306)
 shape = SubResource("RectangleShape2D_rdq1q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

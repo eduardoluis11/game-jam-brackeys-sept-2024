@@ -18,3 +18,6 @@ We used ChatGPT, Github's Copilot, and Bing's AI in the creation of some of the 
 5) Kronbits. (2019, September 23). 200 Free SFX. Retrieved from https://kronbits.itch.io/freesfx
 
 6) Coffee ‘Valen’ Bat. (2022, October 29). SweetSounds SFX. Retrieved from https://coffeevalenbat.itch.io/sweet-sounds-sfx-pack . Sound Effects by Coffee 'Valen' Bat. 
+
+7) Boldin, Boldo. (2024, January 11). Enemy skeletons for a platform game set in a fantasy world (Asset Pack). Retrieved from https://boldoboldin.itch.io/enemy-skeletons-for-a-platform-game-set-in-a-fantasy-world 
+

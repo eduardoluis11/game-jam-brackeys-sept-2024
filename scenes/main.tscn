@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cwywekmbi5xir"]
+[gd_scene load_steps=36 format=3 uid="uid://cwywekmbi5xir"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
 [ext_resource type="Script" path="res://scripts/storm_system.gd" id="2_gf5pu"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://33w3hl172lv4" path="res://scenes/wall.tscn" id="10_jhbrx"]
 [ext_resource type="Script" path="res://scripts/goal.gd" id="11_h1j48"]
 [ext_resource type="Texture2D" uid="uid://cg0jqvs2qltxg" path="res://assets/sprites/Enemies/skeleton_run.png" id="11_u1s6g"]
+[ext_resource type="AudioStream" uid="uid://crkirod10hdl0" path="res://assets/Music/02 - it is dangerous to be lonely without a sword (chiptune).ogg" id="13_ykxhb"]
 
 [sub_resource type="Theme" id="Theme_6mpjf"]
 
@@ -229,6 +230,9 @@ shape = SubResource("RectangleShape2D_0e5nu")
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-109, 103)
 scale = Vector2(2.26562, 2.26562)
+stream = ExtResource("13_ykxhb")
+autoplay = true
+bus = &"Music"
 
 [connection signal="storm_started" from="StormSystem" to="." method="_on_storm_system_storm_started"]
 [connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]

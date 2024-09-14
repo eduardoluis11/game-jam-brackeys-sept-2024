@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddwqih3vihn46"]
+
+[ext_resource type="PackedScene" uid="uid://beo2ahgkdbss0" path="res://scenes/platform.tscn" id="1_owl05"]
+[ext_resource type="PackedScene" uid="uid://33w3hl172lv4" path="res://scenes/wall.tscn" id="2_gfdi8"]
+
+[node name="Environment" type="Node"]
+
+[node name="Platform" parent="." instance=ExtResource("1_owl05")]
+visible = false
+position = Vector2(0, 140)
+
+[node name="Wall" parent="." instance=ExtResource("2_gfdi8")]
+visible = false
+position = Vector2(-206, 0)
+rotation = 1.57079

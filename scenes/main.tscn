@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cwywekmbi5xir"]
+[gd_scene load_steps=36 format=3 uid="uid://cwywekmbi5xir"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
 [ext_resource type="Script" path="res://scripts/storm_system.gd" id="2_gf5pu"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://scenes/enemy.gd" id="7_3k674"]
 [ext_resource type="PackedScene" uid="uid://33w3hl172lv4" path="res://scenes/wall.tscn" id="10_jhbrx"]
 [ext_resource type="Script" path="res://scripts/goal.gd" id="11_h1j48"]
+[ext_resource type="Texture2D" uid="uid://cg0jqvs2qltxg" path="res://assets/sprites/Enemies/skeleton_run.png" id="11_u1s6g"]
+[ext_resource type="AudioStream" uid="uid://crkirod10hdl0" path="res://assets/Music/02 - it is dangerous to be lonely without a sword (chiptune).ogg" id="13_ykxhb"]
 
 [sub_resource type="Theme" id="Theme_6mpjf"]
 
@@ -26,6 +28,70 @@ gradient = SubResource("Gradient_ov470")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdq1q"]
 size = Vector2(22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7dty"]
+atlas = ExtResource("11_u1s6g")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txq2y"]
+atlas = ExtResource("11_u1s6g")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8o3v"]
+atlas = ExtResource("11_u1s6g")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7ie4"]
+atlas = ExtResource("11_u1s6g")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbaoj"]
+atlas = ExtResource("11_u1s6g")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujrw2"]
+atlas = ExtResource("11_u1s6g")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt015"]
+atlas = ExtResource("11_u1s6g")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npjfu"]
+atlas = ExtResource("11_u1s6g")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q7ceq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7dty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txq2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8o3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7ie4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbaoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujrw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt015")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npjfu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vjdmv"]
 
@@ -116,6 +182,7 @@ position = Vector2(-110, 111)
 script = ExtResource("7_3k674")
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+visible = false
 position = Vector2(-1.90735e-06, 1.90735e-06)
 scale = Vector2(0.15625, 0.15625)
 texture = ExtResource("2_torvs")
@@ -127,6 +194,13 @@ shape = SubResource("RectangleShape2D_j3i0x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
 shape = SubResource("RectangleShape2D_rdq1q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
+position = Vector2(0.999999, -8)
+scale = Vector2(2.26562, 2.26562)
+sprite_frames = SubResource("SpriteFrames_q7ceq")
+autoplay = "default"
+frame_progress = 0.83031
 
 [node name="Rock" type="RigidBody2D" parent="." groups=["rocks"]]
 position = Vector2(104, 111)
@@ -152,6 +226,13 @@ texture = SubResource("GradientTexture2D_g6qse")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
 shape = SubResource("RectangleShape2D_0e5nu")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-109, 103)
+scale = Vector2(2.26562, 2.26562)
+stream = ExtResource("13_ykxhb")
+autoplay = true
+bus = &"Music"
 
 [connection signal="storm_started" from="StormSystem" to="." method="_on_storm_system_storm_started"]
 [connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]

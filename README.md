@@ -21,3 +21,4 @@ We used ChatGPT, Github's Copilot, and Bing's AI in the creation of some of the 
 
 7) Boldin, Boldo. (2024, January 11). Enemy skeletons for a platform game set in a fantasy world (Asset Pack). Retrieved from https://boldoboldin.itch.io/enemy-skeletons-for-a-platform-game-set-in-a-fantasy-world 
 
+8) Random, R. (2021, December 11). Fakebit / Chiptune Music for Games. Retrieved from https://ragnarrandom.itch.io/retro-game-music

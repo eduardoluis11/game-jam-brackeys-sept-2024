@@ -10,6 +10,8 @@ signal palyer_hited
 var direction = 1  # Dirección inicial: 1 para derecha, -1 para izquierda
 var start_position = Vector2()
 
+@onready var sprite = $AnimatedSprite2D
+
 func _ready():
 	# Guarda la posición inicial del enemigo
 	start_position = position
@@ -33,6 +35,11 @@ func _physics_process(delta):
 			print("Colisión con muro")
 			# Cambia la dirección al lado opuesto (inversión de la dirección x)
 			direction *= -1
+		
+	if direction > 0 and not sprite.is_flipped_h():
+		sprite.set_flip_h(true)
+	elif direction < 0 and sprite.is_flipped_h():
+		sprite.set_flip_h(false)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cwywekmbi5xir"]
+[gd_scene load_steps=37 format=3 uid="uid://cwywekmbi5xir"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
 [ext_resource type="Script" path="res://scripts/storm_system.gd" id="2_gf5pu"]
@@ -8,7 +8,7 @@
 [ext_resource type="Material" uid="uid://bcs5r7mji6xcs" path="res://shaders/flash_material.tres" id="5_vio3r"]
 [ext_resource type="PackedScene" uid="uid://beo2ahgkdbss0" path="res://scenes/platform.tscn" id="6_2n1fv"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="6_l7rew"]
-[ext_resource type="Script" path="res://scenes/enemy.gd" id="7_3k674"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="7_3k674"]
 [ext_resource type="PackedScene" uid="uid://33w3hl172lv4" path="res://scenes/wall.tscn" id="10_jhbrx"]
 [ext_resource type="Script" path="res://scripts/goal.gd" id="11_h1j48"]
 [ext_resource type="Texture2D" uid="uid://cg0jqvs2qltxg" path="res://assets/sprites/Enemies/skeleton_run.png" id="11_u1s6g"]
@@ -112,6 +112,9 @@ gradient = SubResource("Gradient_ln63r")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e5nu"]
 
+[sub_resource type="TileSet" id="TileSet_7kr61"]
+tile_size = Vector2i(64, 64)
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lio0d")
 
@@ -160,10 +163,6 @@ rotation = 1.57079
 [node name="Player" parent="." instance=ExtResource("3_rfuot")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-material = ExtResource("5_vio3r")
 
 [node name="Item" type="Area2D" parent="."]
 position = Vector2(139, 55)
@@ -232,6 +231,10 @@ position = Vector2(-109, 103)
 scale = Vector2(2.26562, 2.26562)
 stream = ExtResource("13_ykxhb")
 autoplay = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
+tile_set = SubResource("TileSet_7kr61")
 
 [connection signal="storm_started" from="StormSystem" to="." method="_on_storm_system_storm_started"]
 [connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]

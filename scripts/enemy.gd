@@ -31,7 +31,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		# Si colisiona con una pared (podría ser un StaticBody2D o una etiqueta como "Wall")
 		var collider = collision.get_collider()
-		if collider.is_in_group("walls") or collider.is_in_group("rocks"):
+		if collider.is_in_group("walls") or collider.is_in_group("rocks") or collider.is_in_group("player"):
 			print("Colisión con muro")
 			# Cambia la dirección al lado opuesto (inversión de la dirección x)
 			direction *= -1

@@ -10,6 +10,8 @@ signal palyer_hited
 var direction = 1  # Dirección inicial: 1 para derecha, -1 para izquierda
 var start_position = Vector2()
 
+@onready var sprite = $AnimatedSprite2D
+
 func _ready():
 	# Guarda la posición inicial del enemigo
 	start_position = position
@@ -27,12 +29,20 @@ func _physics_process(delta):
 		
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
-		# Si colisiona con una pared (podría ser un StaticBody2D o una etiqueta como "Wall")
 		var collider = collision.get_collider()
-		if collider.is_in_group("walls") or collider.is_in_group("rocks"):
+
+		# Comprueba si el collider tiene una propiedad de colisión válida
+		if collider.has_method("get_collision_layer"):
+			var collision_layer = collider.get_collision_layer()
+		if collision_layer == 2 or collider.is_in_group("rocks") or collider.is_in_group("player"):
 			print("Colisión con muro")
 			# Cambia la dirección al lado opuesto (inversión de la dirección x)
 			direction *= -1
+		
+	if direction > 0 and not sprite.is_flipped_h():
+		sprite.set_flip_h(true)
+	elif direction < 0 and sprite.is_flipped_h():
+		sprite.set_flip_h(false)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

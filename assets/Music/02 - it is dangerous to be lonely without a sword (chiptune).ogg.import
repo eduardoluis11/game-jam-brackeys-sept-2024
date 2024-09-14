@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://crkirod10hdl0"
-path="res://.godot/imported/02 - it is dangerous to be lonely without a sword (chiptune).ogg-cf0646bbaeb1cbe0c18177009d94d860.oggvorbisstr"
+path="res://.godot/imported/02 - it is dangerous to be lonely without a sword (chiptune).ogg-6ee5cd3d26306889f8913852330472ce.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Music/02 - it is dangerous to be lonely without a sword (chiptune).ogg"
-dest_files=["res://.godot/imported/02 - it is dangerous to be lonely without a sword (chiptune).ogg-cf0646bbaeb1cbe0c18177009d94d860.oggvorbisstr"]
+source_file="res://assets/music/02 - it is dangerous to be lonely without a sword (chiptune).ogg"
+dest_files=["res://.godot/imported/02 - it is dangerous to be lonely without a sword (chiptune).ogg-6ee5cd3d26306889f8913852330472ce.oggvorbisstr"]
 
 [params]
 

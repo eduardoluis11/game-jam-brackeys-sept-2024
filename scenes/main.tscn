@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_lio0d"]
 [ext_resource type="Script" path="res://scripts/storm_system.gd" id="2_gf5pu"]
-[ext_resource type="Texture2D" uid="uid://bwxs4yjmomhkb" path="res://assets/backgrounds/placeholder_background.png" id="2_qk52e"]
 [ext_resource type="Texture2D" uid="uid://drvcqxsgkjkda" path="res://icon.svg" id="2_torvs"]
 [ext_resource type="PackedScene" uid="uid://bka8ugklc8xaj" path="res://scenes/player.tscn" id="3_rfuot"]
+[ext_resource type="Texture2D" uid="uid://6li7w8gvv5gh" path="res://assets/backgrounds/Cielo Sin Tormenta.png" id="4_ntskl"]
 [ext_resource type="Material" uid="uid://bcs5r7mji6xcs" path="res://shaders/flash_material.tres" id="5_vio3r"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="6_l7rew"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="7_3k674"]
@@ -337,7 +337,7 @@ value = 5.0
 show_percentage = false
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("2_qk52e")
+texture = ExtResource("4_ntskl")
 
 [node name="Player" parent="." instance=ExtResource("3_rfuot")]
 

@@ -22,3 +22,5 @@ We used ChatGPT, Github's Copilot, and Bing's AI in the creation of some of the 
 7) Boldin, Boldo. (2024, January 11). Enemy skeletons for a platform game set in a fantasy world (Asset Pack). Retrieved from https://boldoboldin.itch.io/enemy-skeletons-for-a-platform-game-set-in-a-fantasy-world 
 
 8) Random, R. (2021, December 11). Fakebit / Chiptune Music for Games. Retrieved from https://ragnarrandom.itch.io/retro-game-music
+
+9) Muniz, E. (2017, February 7). Free Pixel Art Platformer painted style. Retrieved from https://edermunizz.itch.io/free-pixel-art-plataformer-painted-style . Link to the author's itch.io page: https://edermunizz.itch.io/ . Author: Eder Muniz. 

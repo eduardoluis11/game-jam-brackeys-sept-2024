@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cvnw63nhnqgcv"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_nsbd5"]
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_nsbd5"]
 [ext_resource type="Texture2D" uid="uid://bv0teh6avb60j" path="res://assets/sprites/Enemies/skeleton_idle.png" id="3_2caa2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3i0x"]
